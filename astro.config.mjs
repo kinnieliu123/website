@@ -1,11 +1,9 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
+import alpine from '@astrojs/alpinejs'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    viewTransitions: true,
-  },
-  integrations: [tailwind(), compress()],
-});
+  integrations: [tailwind(), alpine({ entrypoint: '/src/entrypoint' }), sitemap()],
+})
