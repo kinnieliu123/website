@@ -5,5 +5,6 @@ import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://eng-learn.cn',
   integrations: [tailwind(), alpine({ entrypoint: '/src/entrypoint' }), sitemap()],
 })

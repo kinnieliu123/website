@@ -4,7 +4,7 @@ import collapse from '@alpinejs/collapse'
 export default (Alpine: Alpine) => {
   Alpine.plugin(collapse)
 
-  Alpine.store('theme', {
+  const theme = {
     init() {
       this.isDark = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -23,5 +23,7 @@ export default (Alpine: Alpine) => {
       this.isDark = !this.isDark
       localStorage.setItem('theme', this.isDark ? 'dark' : 'light')
     },
-  })
+  }
+
+  Alpine.store('theme', theme)
 }
