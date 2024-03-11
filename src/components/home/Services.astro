@@ -2,21 +2,21 @@
 const services = [
   {
     step: '01',
-    name: 'Design',
+    name: '幼儿英语启蒙',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      '用有趣的自然拼读游戏和色彩斑斓的分级牛津绘本，通过唱歌、跳舞、做游戏，激发孩子们学习英语的兴趣。同时注重生活英语的实际运用，让孩子们在日常交流中自然而然提高英文沟通能力，让兴趣成为孩子们最好的老师。',
   },
   {
     step: '02',
-    name: 'Develop',
+    name: '小初高英语提分',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      '回归课本的精髓，逐步掌握单词、短语和语法，为英语学习打下坚实的基础，同时确保学习高效，彻底告别死记硬背。分享中高考实践高分做题技巧，查漏补缺，针对性讲述，让成绩提升成为学习英语的自然结果。',
   },
   {
     step: '03',
-    name: 'Maintain',
+    name: '成人零基础英语',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      '将英语融入日常生活、旅游、商务等实际场景中，确保学习内容实用广泛。提供每日监督计划，保持学习的连贯性和进度，让进步每天可见。课程设计循序渐进，同时重视发音训练，通过专业指导纠正发音，让表达更加地道。',
   },
 ]
 ---
@@ -24,7 +24,12 @@ const services = [
 <section class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-12 sm:gap-16">
-      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Services</h2>
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+        课程内容<span
+          class="ml-2 text-lg before:mx-2 before:text-primary-950/70 before:content-['/'] before:dark:text-primary-200/70"
+          >Lessons</span
+        >
+      </h2>
       <div class="grid gap-8 lg:grid-cols-3">
         {
           services.map((service) => (
@@ -40,6 +45,9 @@ const services = [
           ))
         }
       </div>
+      <p class="text-center text-primary-950/60 dark:text-primary-200/60">
+        以及更多贴心课程，满足各年龄段和不同水平学习者的英语学习需求。
+      </p>
     </div>
   </div>
 </section>

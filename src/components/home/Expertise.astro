@@ -2,39 +2,44 @@
 const features = [
   {
     id: 'expertise-1',
-    name: 'Digital Experience Platforms',
+    name: '个性化课前沟通',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+      '个性化的课前沟通，深入了解你的英语水平和学习需求，确保课程内容完全对口，同时判断我是否符合你对理想靠谱英语导师的期待。',
   },
   {
     id: 'expertise-2',
-    name: 'Web & Mobile Development',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    name: '灵活的上课模式',
+    description: '可自由选择在线或面对面授课，为你提供最便利的学习方式。',
   },
   {
     id: 'expertise-3',
-    name: 'Serverless Computing Platforms',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    name: '多样化的课程形式',
+    description: '提供一对一或小班教学，确保每位学生都能获得充分的个人关注和互动机会。',
   },
   {
     id: 'expertise-4',
-    name: 'Build & Test Automation Tools',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    name: '互动式多媒体教学',
+    description: '结合多媒体技术，打造互动式教学环境，全面照顾听说读写各项技能的提升。',
   },
   {
     id: 'expertise-5',
-    name: 'Artificial Intelligence',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    name: '兴趣驱动的定制学习计划',
+    description: '依据你的兴趣和目标“量身订制”学习方案，让学习变得更有趣、更有效。',
   },
   {
     id: 'expertise-6',
-    name: 'Full project support',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    name: '日常学习跟踪与监督',
+    description: '“导弹式”监督机制，每日追踪学习进度，确保您的学习目标不偏离轨道。',
+  },
+  {
+    id: 'expertise-7',
+    name: '定期成效评估',
+    description: '定期进行学习成果检测，确保成效，每分钱都pay back（回报）。',
+  },
+  {
+    id: 'expertise-8',
+    name: '精准诊断薄弱点',
+    description: '通过“地雷式”考查发现学习中的薄弱知识点，查漏补缺，针对性强化学习。',
   },
 ]
 ---
@@ -42,7 +47,13 @@ const features = [
 <section class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
-      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Expertise</h2>
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+        教学方式
+        <span
+          class="ml-2 text-lg before:mx-2 before:text-primary-950/70 before:content-['/'] before:dark:text-primary-200/70"
+          >Feature</span
+        >
+      </h2>
       <div class="lg:col-span-2">
         <dl
           class="-mt-3"
