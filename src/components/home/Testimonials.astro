@@ -1,26 +1,15 @@
 ---
 const testimonials = [
-  {
-    name: 'Rebecca Hayes',
-    description: 'Designer',
-    image: '/assets/testimonial-1.webp',
-    message:
-      '“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”',
-  },
-  {
-    name: 'Rosa Spencer',
-    description: 'Team Leader',
-    image: '/assets/testimonial-2.webp',
-    message:
-      '“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”',
-  },
-  {
-    name: 'Christina Upton',
-    description: 'Manager',
-    image: '/assets/testimonial-3.webp',
-    message:
-      '“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”',
-  },
+  '针对一年级学生，深入了解了他们的学习状况和需求后，制定了一份量身定制的学习计划，有效促进了他们的英语进步。',
+  '对五年级学生进行深入教授，回顾并巩固了国际音标等英语基础知识，有效提升了学生对课堂内容的掌握和理解能力。',
+  '在教授初一至初二小班课（3人班）期间，引导学生完成了两个单元的预习与复习，学生们取得了显著的成绩提高。',
+  '通过线上授课，指导即将升入初三的学生，通过有针对性的复习和预习，帮助她在班级测验中获得前五的优异成绩。',
+  '教授成都树德中学的高一女生至高二上学期，通过复习巩固知识，纠正学习习惯，从基础薄弱到高二入学考试成绩提升50+分，帮助她掌握了有效的学习方法。',
+  '为成都某国际幼儿园小朋友提供英语教学，一年之内，孩子已能流利进行英语对话，并能朗读英文绘本。',
+  '对零基础且准备出国的女士进行英语口语及旅行日常用语的培训，有效提升了她的英语实际应用能力。',
+  '针对英语成绩不理想的三年级学生，制定了针对性的学习计划，通过独特的记忆方法加强单词记忆，基础得到巩固，成绩得到显著提高。',
+  '教授零基础的男生使用新概念2教材，帮助他建立了学习习惯，从对英语不感兴趣到积极学习，家长对此非常满意并主动提薪。',
+  '对英语不感兴趣的成都石室中学高一男生采用因材施教的方式，通过他感兴趣的内容制作个性化的入门级阅读材料，显著提高了他对英语的兴趣和成绩。',
 ]
 ---
 
@@ -28,14 +17,17 @@ const testimonials = [
   <div class="v mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col items-center gap-12 lg:gap-20">
       <h2 class="mx-auto max-w-xl text-center text-3xl font-medium tracking-tight sm:text-4xl">
-        Trusted by the largest companies in the world
+        教学表现<span
+          class="ml-2 text-lg before:mx-2 before:text-primary-950/70 before:content-['/'] before:dark:text-primary-200/70"
+          >Teaching Performance</span
+        >
       </h2>
       <div
-        class="grid divide-y divide-primary-900/10 dark:divide-primary-300/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0"
+        class="grid gap-y-2 divide-y divide-primary-900/10 dark:divide-primary-300/10 lg:grid-cols-3 lg:gap-y-8 lg:divide-y-0"
       >
         {
           testimonials.map((testimonial) => (
-            <figure class="mx-auto flex max-w-lg flex-col items-center gap-6 py-8 lg:px-8 lg:py-0">
+            <figure class="mx-auto flex max-w-lg flex-col items-center gap-6 py-8 lg:px-8 lg:py-0 lg:[&:nth-child(3n+2)]:border">
               <div class="flex flex-row gap-2">
                 {[...Array(3)].map(() => (
                   <svg
@@ -50,17 +42,8 @@ const testimonials = [
                 ))}
               </div>
               <blockquote class="text-center text-lg italic leading-loose text-primary-950/70 dark:text-primary-200/70">
-                <p>{testimonial.message}</p>
+                <p>{testimonial}</p>
               </blockquote>
-              <figcaption class="flex flex-col gap-4">
-                <img class="mx-auto h-8 w-8 rounded-full" src={testimonial.image} alt="" />
-                <div class="text-center">
-                  <div class="text-base font-medium">{testimonial.name}</div>
-                  <div class="text-sm text-primary-950/70 dark:text-primary-200/70">
-                    {testimonial.description}
-                  </div>
-                </div>
-              </figcaption>
             </figure>
           ))
         }

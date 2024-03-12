@@ -4,12 +4,12 @@ const features = [
     id: 'expertise-1',
     name: '个性化课前沟通',
     description:
-      '个性化的课前沟通，深入了解你的英语水平和学习需求，确保课程内容完全对口，同时判断我是否符合你对理想靠谱英语导师的期待。',
+      '在正式上课前，深入了解你的英语水平和学习需求，确保课程内容完全对口，同时判断我是否符合你对理想靠谱英语导师的期待。',
   },
   {
     id: 'expertise-2',
     name: '灵活的上课模式',
-    description: '可自由选择在线或面对面授课，为你提供最便利的学习方式。',
+    description: '可选择在线网课或面对面授课，为你提供最便利的学习方式。',
   },
   {
     id: 'expertise-3',
@@ -44,12 +44,11 @@ const features = [
 ]
 ---
 
-<section class="py-16 sm:py-20">
+<section id="feature" class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
       <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
-        教学方式
-        <span
+        教学方式<span
           class="ml-2 text-lg before:mx-2 before:text-primary-950/70 before:content-['/'] before:dark:text-primary-200/70"
           >Feature</span
         >
@@ -96,8 +95,8 @@ const features = [
                     </div>
                   </button>
                 </dt>
-                <dd class="pb-6 pr-6" id={feature.id} x-show="isOpen" x-cloak x-collapse>
-                  <p class="text-base text-primary-950/70 dark:text-primary-200/70">
+                <dd id={feature.id} x-show="isOpen" x-cloak x-collapse>
+                  <p class="pb-6 pr-6 text-base text-primary-950/70 dark:text-primary-200/70">
                     {feature.description}
                   </p>
                 </dd>

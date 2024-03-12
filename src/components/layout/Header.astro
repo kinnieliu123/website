@@ -2,23 +2,27 @@
 const links = [
   {
     ref: '01',
-    name: 'Home',
-    href: '/',
+    name: '课程内容',
+    subname: 'Lessons',
+    href: '#lessons',
   },
   {
     ref: '02',
-    name: 'About',
-    href: '/about',
+    name: '教学方式',
+    subname: 'Feature',
+    href: '#feature',
   },
   {
     ref: '03',
-    name: 'Pricing',
-    href: '/pricing',
+    name: '关于我',
+    subname: 'About',
+    href: '#about-me',
   },
   {
     ref: '04',
-    name: 'Contact',
-    href: '/contact',
+    name: '联系我',
+    subname: 'Contact',
+    href: '#contact',
   },
 ]
 ---
@@ -32,21 +36,19 @@ const links = [
     class="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8"
   >
     <!-- Brand logo -->
-    <div class="flex">
-      <a
-        href="/"
-        class="rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200"
-      >
-        <span class="sr-only">Stone</span>
-        <img
-          class="h-8 w-auto"
-          width="65"
-          height="40"
-          :src="$store.theme.isDark ? '/assets/logo-inverted.svg' : '/assets/logo.svg'"
-          alt="Stone"
-        />
-      </a>
-    </div>
+    <a
+      href="/"
+      class="flex flex-col gap-1 rounded-md opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200"
+    >
+      <span class="sr-only">Stone</span>
+      <span class="flex items-center gap-1 text-xl font-bold leading-none"
+        >Learn
+        <i
+          class="relative h-4 w-3 rounded-[1px] bg-primary-950 transition-colors before:absolute before:inset-y-0 before:left-[2px] before:w-px before:bg-primary-50 before:content-['_'] dark:bg-primary-50 before:dark:bg-primary-950"
+        ></i>
+      </span>
+      <span class="text-sm font-semibold leading-none">English KK</span>
+    </a>
 
     <!-- Actions -->
     <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
@@ -141,8 +143,9 @@ const links = [
         <p
           class="max-w-sm text-xl italic leading-loose text-primary-950/70 dark:text-primary-200/70"
         >
-          <span class="font-medium">Stone</span> is a premium Astro theme specially designed for Business,
-          Marketing, SaaS and Startup websites.
+          I enjoy helping my students improve their English and achieve their learning goals. I like
+          to make my lessons fun, interactive, and with a focus on key points. I look forward to
+          helping you achieve your English language goals.
         </p>
       </div>
 
@@ -157,7 +160,10 @@ const links = [
               <div class="flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200">
                 <div class="flex items-center gap-6">
                   <span class="text-xs">{link.ref}</span>
-                  <span class="group-hover:underline">{link.name}</span>
+                  <span class="transition-transform group-hover:scale-105">{link.name}</span>
+                  <span class="self-end text-base before:mx-2 before:content-['/']">
+                    {link.subname}
+                  </span>
                 </div>
                 <svg
                   class="h-6 w-6 text-primary-600 dark:text-primary-400 sm:h-8 sm:w-8"

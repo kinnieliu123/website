@@ -8,13 +8,14 @@ import Header from '../components/layout/Header.astro'
 interface Props {
   description: string
   title: string
+  keywords: string
 }
 
-const { description, title } = Astro.props
+const { description, title, keywords } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
+<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -24,10 +25,14 @@ const { description, title } = Astro.props
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body
+    style="text-wrap: balance;"
     class="bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
   >
     <Header />

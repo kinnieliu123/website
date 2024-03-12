@@ -1,51 +1,51 @@
 ---
 const bottomLinks = [
+  // {
+  //   header: 'Social',
+  //   links: [
+  //     {
+  //       name: 'Github',
+  //       href: 'https://github.com/',
+  //       isExternal: true,
+  //     },
+  //     {
+  //       name: 'Twitter',
+  //       href: 'https://twitter.com/',
+  //       isExternal: true,
+  //     },
+  //     {
+  //       name: 'Instagram',
+  //       href: 'https://instagram.com/',
+  //       isExternal: true,
+  //     },
+  //     {
+  //       name: 'Facebook',
+  //       href: 'https://facebook.com/',
+  //       isExternal: true,
+  //     },
+  //   ],
+  // },
   {
-    header: 'Social',
+    header: '导航',
     links: [
       {
-        name: 'Github',
-        href: 'https://github.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Twitter',
-        href: 'https://twitter.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Instagram',
-        href: 'https://instagram.com/',
-        isExternal: true,
-      },
-      {
-        name: 'Facebook',
-        href: 'https://facebook.com/',
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    header: 'Company',
-    links: [
-      {
-        name: 'Home',
-        href: '/',
+        name: '课程内容',
+        href: '#lessons',
         isExternal: false,
       },
       {
-        name: 'About',
-        href: '/about',
+        name: '教学方式',
+        href: '#feature',
         isExternal: false,
       },
       {
-        name: 'Pricing',
-        href: '/pricing',
+        name: '关于我',
+        href: '#about-me',
         isExternal: false,
       },
       {
-        name: 'Contact',
-        href: '/contact',
+        name: '联系我',
+        href: '#contact',
         isExternal: false,
       },
     ],
@@ -61,19 +61,24 @@ const bottomLinks = [
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col justify-between gap-12 sm:gap-16 lg:flex-row">
       <div class="flex max-w-sm flex-col items-start gap-6 sm:gap-8">
-        <img
-          class="h-8 w-auto"
-          width="65"
-          height="40"
-          :src="$store.theme.isDark ? '/assets/logo-inverted.svg' : '/assets/logo.svg'"
-          alt="Stone"
-        />
-        <p class="text-base text-primary-950/70 dark:text-primary-200/70">
-          Stone is a premium Astro theme specially designed for Business, Marketing, SaaS and
-          Startup websites.
+        <div class="flex flex-col gap-1">
+          <span class="flex items-center gap-1 text-xl font-bold leading-none"
+            >Learn
+            <i
+              class="relative h-4 w-3 rounded-[1px] bg-primary-950 transition-colors before:absolute before:inset-y-0 before:left-[2px] before:w-px before:bg-primary-50 before:content-['_'] dark:bg-primary-50 before:dark:bg-primary-950"
+            ></i>
+          </span>
+          <span class="text-sm font-semibold leading-none">English KK</span>
+        </div>
+        <p class="text-sm text-primary-950/70 dark:text-primary-200/70">
+          I enjoy helping my students improve their English and achieve their learning goals. I like
+          to make my lessons fun, interactive, and with a focus on key points. I look forward to
+          helping you achieve your English language goals.
         </p>
-        <p class="text-sm text-primary-950/70 dark:text-primary-200/70">© 2024 Kinnie</p>
-        <p class="text-xs text-primary-950/50 dark:text-primary-200/50">
+        <p class="text-sm text-primary-950/70 dark:text-primary-200/70 max-lg:hidden">
+          © 2024 Kinnie
+        </p>
+        <p class="text-xs text-primary-950/50 dark:text-primary-200/50 max-lg:hidden">
           <a href="https://beian.miit.gov.cn">蜀ICP备2024058336号</a>
         </p>
       </div>
@@ -113,6 +118,15 @@ const bottomLinks = [
           ))
         }
       </div>
+      <p
+        class="flex justify-between text-sm text-primary-950/70 dark:text-primary-200/70 lg:hidden"
+      >
+        <span>© 2024 Kinnie</span>
+        <a
+          href="https://beian.miit.gov.cn"
+          class="text-xs text-primary-950/50 dark:text-primary-200/50">蜀ICP备2024058336号</a
+        >
+      </p>
     </div>
   </div>
 </footer>
