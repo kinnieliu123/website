@@ -30,6 +30,7 @@
     "viewerjs": "^1.11.6"
   },
   "devDependencies": {
-    "@types/alpinejs__collapse": "^3.13.4"
+    "@types/alpinejs__collapse": "^3.13.4",
+    "sharp": "^0.33.3"
   }
 }
