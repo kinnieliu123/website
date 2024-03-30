@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets'
+import qrCode from '../../images/qr-code.jpg'
+---
+
 <section id="contact" class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
     <div
@@ -10,9 +15,9 @@
         <p class="mx-auto max-w-2xl text-lg text-primary-950/70 dark:text-primary-200/70">
           扫码下方微信咨询详情，预约试听
         </p>
-        <img
-          class="w-[350px] self-center rounded-xl dark:brightness-75"
-          src="/assets/qr-code.jpg"
+        <Image
+          class="w-[350px] self-center rounded-xl bg-primary-500/10 dark:bg-primary-400/10 dark:brightness-75"
+          src={qrCode}
           alt="weixin"
         />
       </div>
