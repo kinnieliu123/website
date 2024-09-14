@@ -1,7 +1,6 @@
 ---
 import '@fontsource/inter/latin-400.css'
 import '@fontsource/inter/latin-500.css'
-import { ViewTransitions } from 'astro:transitions'
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
 
@@ -29,7 +28,6 @@ const { description, title, keywords } = Astro.props
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
   <body
     class="text-pretty bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"

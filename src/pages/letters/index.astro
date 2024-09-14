@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+interface Letter {
+  file: string
+  frontmatter: {
+    title: string
+    date: string
+  }
+}
+
+const letters = (
+  Object.values(await import.meta.glob('../../pages/letters/*.md', { eager: true })) as Letter[]
+).sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+---
+
+<Layout title="Letters" description="Letters" keywords="Letters">
+  <div class="mx-auto min-h-[50vh] max-w-[65ch] px-4">
+    <h1 class="my-16 text-3xl font-medium tracking-tight sm:text-4xl">
+      给大家<span
+        class="ml-2 text-lg before:mx-2 before:text-primary-950/70 before:content-['/'] before:dark:text-primary-200/70"
+        >Newsletters</span
+      >
+    </h1>
+    <div class="flex flex-col gap-4">
+      {
+        letters.map((letter) => {
+          const formattedDate = new Date(letter.frontmatter.date).toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+          const url = letter.file.split('/').slice(-1)[0].replace('.md', '')
+
+          return (
+            <a href={`/letters/${url}`} class="flex max-sm:flex-col sm:items-center">
+              <h2 class="flex-1 text-lg font-bold  text-primary-950 dark:text-primary-200">
+                {letter.frontmatter.title}
+              </h2>
+              <p class="text-primary-950/60 dark:text-primary-200/60">{formattedDate}</p>
+            </a>
+          )
+        })
+      }
+    </div>
+  </div>
+</Layout>

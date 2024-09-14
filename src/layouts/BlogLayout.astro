@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets'
+import type { MarkdownLayoutProps } from 'astro'
+
+import '@fontsource/inter/latin-400.css'
+import '@fontsource/inter/latin-500.css'
+import Footer from '../components/layout/Footer.astro'
+import Header from '../components/layout/Header.astro'
+
+import qrCode from '../images/qr-code.jpg'
+
+type Props = MarkdownLayoutProps<{
+  title: string
+  date: string
+}>
+
+const { frontmatter } = Astro.props
+const { title, date } = frontmatter
+
+const formattedDate = new Date(date).toLocaleDateString('zh-CN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<!doctype html>
+<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={title} />
+    <meta name="keywords" content={title} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+    <title>{title}</title>
+  </head>
+  <body
+    class="text-pretty bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
+  >
+    <Header />
+    <main>
+      <h1 class="my-16 text-center text-3xl font-bold">{title}</h1>
+      <p class="text-center text-sm text-primary-950/60 dark:text-primary-200/60">{formattedDate}</p>
+      <article class="prose prose-img:rounded-xl lg:prose-xl m-auto">
+        <slot />
+      </article>
+      <div class="mt-24 flex flex-col items-center justify-center gap-4 sm:gap-2">
+        <h2 class="text-xl font-medium tracking-tight sm:text-lg">一起探索英语世界的无限可能！</h2>
+        <p class="text-sm text-primary-950/70 dark:text-primary-200/70">
+          扫码下方微信咨询详情，预约试听
+        </p>
+        <Image
+          class="w-[250px] self-center rounded-xl bg-primary-500/10 dark:bg-primary-400/10 dark:brightness-75"
+          loading="eager"
+          src={qrCode}
+          alt="weixin"
+        />
+      </div>
+    </main>
+    <Footer />
+    <style is:global>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </body>
+</html>
