@@ -10,7 +10,7 @@ interface Letter {
 }
 
 const letters = (
-  Object.values(await import.meta.glob('../../pages/letters/*.md', { eager: true })) as Letter[]
+  Object.values(import.meta.glob('../../pages/letters/*.md', { eager: true })) as Letter[]
 ).sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
 ---
 
@@ -34,7 +34,7 @@ const letters = (
 
           return (
             <a href={`/letters/${url}`} class="flex max-sm:flex-col sm:items-center">
-              <h2 class="flex-1 text-lg font-bold  text-primary-950 dark:text-primary-200">
+              <h2 class="flex-1 text-lg font-bold text-primary-950 dark:text-primary-200">
                 {letter.frontmatter.title}
               </h2>
               <p class="text-primary-950/60 dark:text-primary-200/60">{formattedDate}</p>

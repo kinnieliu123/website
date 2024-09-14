@@ -8,7 +8,7 @@ interface Letter {
 }
 
 const letters = (
-  Object.values(await import.meta.glob('../../pages/letters/*.md', { eager: true })) as Letter[]
+  Object.values(import.meta.glob('../../pages/letters/*.md', { eager: true })) as Letter[]
 )
   .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
   .slice(0, 3)
